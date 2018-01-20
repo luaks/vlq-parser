@@ -1,0 +1,6 @@
+[package]
+name = "vlq-parser"
+version = "0.1.0"
+authors = ["Lukas Peleska <git@luaks.net>"]
+
+[dependencies]
