@@ -5,7 +5,7 @@ macro_rules! vlq_parse_tests {
     $(
         #[test]
         #[allow(non_snake_case)]
-        fn parse_$name() {
+        fn $name() {
             // given
             let (input, expected) = $value;
 
@@ -24,18 +24,18 @@ macro_rules! vlq_parse_tests {
 }
 
 vlq_parse_tests! {
-    empty_string_to_0: ("", 0),
-    string__at__to_0: ("@", 0),
-    string__at_3xgravis_to_0: ("@```", 0),
-    string_A_to_1: ("A", 1),
-    string_B_to_2: ("B", 2),
-    string_C_to_3: ("C", 3),
-    string_Z_to_26: ("Z", 26),
-    string__underscore__to_31: ("_", 31),
-    string_Aa_to_33: ("Aa", 33),
-    string_A_at__to_32: ("A`", 32),
-    string_A_DEL__to_63: ("A\x7f", 63),
-    string_match_int_max: ("O\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f", 0xFFFFFFFFFFFFFFFF),
+    parse_empty_string_to_0: ("", 0),
+    parse_string__at__to_0: ("@", 0),
+    parse_string__at_3xgravis_to_0: ("@```", 0),
+    parse_string_A_to_1: ("A", 1),
+    parse_string_B_to_2: ("B", 2),
+    parse_string_C_to_3: ("C", 3),
+    parse_string_Z_to_26: ("Z", 26),
+    parse_string__underscore__to_31: ("_", 31),
+    parse_string_Aa_to_33: ("Aa", 33),
+    parse_string_A_at__to_32: ("A`", 32),
+    parse_string_A_DEL__to_63: ("A\x7f", 63),
+    parse_string_match_int_max: ("O\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f\x7f", 0xFFFFFFFFFFFFFFFF),
 }
 
 #[test]
