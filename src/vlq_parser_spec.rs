@@ -5,7 +5,7 @@ macro_rules! vlq_parse_tests {
     $(
         #[test]
         #[allow(non_snake_case)]
-        fn $name() {
+        fn parse_$name() {
             // given
             let (input, expected) = $value;
 
