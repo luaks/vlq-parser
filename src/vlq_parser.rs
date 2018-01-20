@@ -88,10 +88,10 @@ fn calculate_vlq_value(vlq_string: &str) -> u64 {
     return vlq_value;
 }
 
-/// Parses a VLQ (Variable Length Query) encoded number
-/// VLQ uses a string for the number format
-/// Each characters 5 lowest order bits are digits
-/// The last character has bit 6 set to true
+/// Parses a VLQ (Variable Length Query) encoded number.
+/// VLQ uses a string for the number format.
+/// Each characters 5 lowest order bits are digits.
+/// The last character is marked by the sixth bit being a 1.
 ///
 /// ```
 /// use vlq_parser::*;
